@@ -1,0 +1,26 @@
+@use '../../Functios.scss' as f;
+@use '../../Colors.scss' as c;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    img {
+      width: 177px;
+      height: 45px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    gap: 13px;
+
+    li + li::before {
+      content: '/';
+      display: inline-block;
+      margin-right: 13px;
+    }
+  }
+}
