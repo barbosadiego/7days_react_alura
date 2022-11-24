@@ -1,0 +1,76 @@
+@use './Functios.scss' as f;
+@use './Colors.scss' as c;
+
+// general styles for app
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: c.$bg-color;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Elsie Swash Caps', cursive;
+}
+
+p {
+  font-weight: 400;
+  font-size: f.rem(16);
+  line-height: f.rem(26);
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  background-image: url(./assets/Vector.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+// utilitaries classes
+
+.title {
+  font-weight: 900;
+  font-size: f.rem(82);
+  line-height: f.rem(94);
+}
+
+.subtitle {
+  font-weight: 900;
+  font-size: f.rem(42);
+  line-height: f.rem(48);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
