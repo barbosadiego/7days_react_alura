@@ -17,6 +17,10 @@ const Header = () => {
   useEffect(() => {
     window.addEventListener('resize', windowCheck);
     windowCheck();
+
+    return () => {
+      window.removeEventListener('resize', windowCheck)
+    }
   }, []);
 
   return (
