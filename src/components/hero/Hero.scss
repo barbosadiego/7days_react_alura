@@ -1,0 +1,21 @@
+@use '../../Functios.scss' as f;
+@use '../../Colors.scss' as c;
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  &__intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  &__image {
+    img {
+      position: relative;
+      left: -150px;
+    }
+  }
+}
