@@ -1,5 +1,16 @@
+import './App.scss';
+import Header from './components/header/Header';
+import Hero from './components/hero/Hero';
+
 const App = () => {
-  return <div>ola mundo!</div>;
+  return (
+    <>
+      <Header />
+      <main>
+        <Hero />
+      </main>
+    </>
+  );
 };
 
 export default App;
