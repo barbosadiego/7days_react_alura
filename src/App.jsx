@@ -1,14 +1,17 @@
-import './App.scss';
-import Header from './components/header/Header';
-import Hero from './components/hero/Hero';
+import Theme from './components/styles/Theme.styled';
+import { Container } from './components/styles/Container.styled';
+import Header from './components/Header';
+import Hero from './components/Hero';
 
 const App = () => {
   return (
     <>
-      <Header />
-      <main>
-        <Hero />
-      </main>
+      <Theme>
+        <Container>
+          <Header />
+          <Hero />
+        </Container>
+      </Theme>
     </>
   );
 };
