@@ -1,10 +1,32 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 const Newsletter = () => {
+  const [email, setEmail] = useState('');
+
+  const inputCheck = (e) => {
+    e.preventDefault();
+
+    if (email) {
+      alert(
+        `Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`,
+      );
+      setEmail('');
+    }
+  };
+
   return (
     <StyledNewsletter>
-      <input type="text" placeholder="Insira seu email" />
-      <button>Assinar newsletter</button>
+      <form onSubmit={inputCheck}>
+        <input
+          type="email"
+          required
+          placeholder="Insira seu email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <button type="submit">Assinar newsletter</button>
+      </form>
     </StyledNewsletter>
   );
 };
@@ -13,7 +35,10 @@ export default Newsletter;
 
 const StyledNewsletter = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow};
-  display: flex;
+
+  form {
+    display: flex;
+  }
 
   input {
     width: 100%;
