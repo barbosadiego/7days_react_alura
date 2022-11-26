@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+const Newsletter = () => {
+  return (
+    <StyledNewsletter>
+      <input type="text" placeholder="Insira seu email" />
+      <button>Assinar newsletter</button>
+    </StyledNewsletter>
+  );
+};
+
+export default Newsletter;
+
 const StyledNewsletter = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow};
   display: flex;
@@ -25,14 +36,3 @@ const StyledNewsletter = styled.div`
     z-index: 1;
   }
 `;
-
-const Newsletter = () => {
-  return (
-    <StyledNewsletter>
-      <input type="text" placeholder="Insira seu email" />
-      <button>Assinar newsletter</button>
-    </StyledNewsletter>
-  );
-};
-
-export default Newsletter;
