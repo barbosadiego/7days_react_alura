@@ -1,17 +1,16 @@
-import Theme from './components/styles/Theme.styled';
 import { Container } from './components/styles/Container.styled';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Offer from './components/Offer';
 
 const App = () => {
   return (
     <>
-      <Theme>
-        <Container>
-          <Header />
-          <Hero />
-        </Container>
-      </Theme>
+      <Container>
+        <Header />
+        <Hero />
+        <Offer />
+      </Container>
     </>
   );
 };
