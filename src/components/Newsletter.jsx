@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
+import sendMail from '../helpers/sendMail';
 
 const Newsletter = () => {
   const [email, setEmail] = useState('');
+  const [nome, setNome] = useState('');
+  const form = useRef();
 
   const inputCheck = (e) => {
     e.preventDefault();
@@ -11,21 +14,33 @@ const Newsletter = () => {
       alert(
         `Obrigado pela sua assinatura, você receberá nossas novidades no e-mail ${email}`,
       );
-      setEmail('');
+
+      sendMail(form.current);
     }
   };
 
   return (
     <StyledNewsletter>
-      <form onSubmit={inputCheck}>
+      <form onSubmit={inputCheck} ref={form}>
         <input
-          type="email"
+          type="text"
+          placeholder="Insira seu nome"
           required
-          placeholder="Insira seu email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
+          name="user_name"
         />
-        <button type="submit">Assinar newsletter</button>
+        <div>
+          <input
+            type="email"
+            required
+            placeholder="Insira seu email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            name="user_email"
+          />
+          <button type="submit">Assinar newsletter</button>
+        </div>
       </form>
     </StyledNewsletter>
   );
@@ -37,7 +52,19 @@ const StyledNewsletter = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow};
 
   form {
-    display: flex;
+    display: grid;
+    gap: 0.5rem;
+
+    & > div {
+      display: flex;
+      @media (max-width: 768px) {
+        display: block;
+      }
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
   }
 
   input {
@@ -59,5 +86,8 @@ const StyledNewsletter = styled.div`
     font-size: 1rem;
     font-family: 'Montserrat';
     z-index: 1;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 `;
