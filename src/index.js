@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { createGlobalStyle } from 'styled-components';
 import pngBackground from './assets/Vector.png';
+import Theme from './components/styles/Theme.styled';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -15,6 +16,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: ${({ theme }) => theme.color.bgColor};
 }
 
 h1,
@@ -63,7 +65,9 @@ button {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <Theme>
+      <GlobalStyle />
+      <App />
+    </Theme>
   </React.StrictMode>,
 );
