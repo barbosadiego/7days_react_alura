@@ -1,8 +1,6 @@
 import emailjs from '@emailjs/browser';
 
 export default function sendMail(message) {
-  console.log(process.env.REACT_APP_PUBLIC_KEY);
-
   emailjs
     .sendForm(
       process.env.REACT_APP_SERVICE_ID,
