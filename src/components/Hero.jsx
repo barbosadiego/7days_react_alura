@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import background from '../assets/imagem-hero.png';
 import Newsletter from './Newsletter';
+import { Title } from './styles/Titles.styled';
 
 const Hero = () => {
   return (
@@ -9,7 +10,7 @@ const Hero = () => {
         <StyledIntro>
           <div>
             <p>Sua casa com as</p>
-            <h1>melhores plantas</h1>
+            <Title>melhores plantas</Title>
           </div>
           <p>
             Encontre aqui uma vasta seleção de plantas para decorar a sua casa e
@@ -37,10 +38,8 @@ const StyledHero = styled.section`
   }
 
   img {
-    position: relative;
-    left: -150px;
     @media screen and (max-width: 820px) {
-      left: -50px;
+      display: none;
     }
   }
 `;
@@ -54,16 +53,6 @@ const StyledIntro = styled.div`
     p {
       font-size: 25px;
       margin-bottom: 1rem;
-    }
-  }
-
-  h1 {
-    font-weight: 900;
-    font-size: 82px;
-    line-height: 94px;
-    @media screen and (max-width: 500px) {
-      font-size: 70px;
-      line-height: 75px;
     }
   }
 `;
