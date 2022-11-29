@@ -6,11 +6,11 @@ import Item from './Item';
 
 const Offer = () => {
   const [plants, setPlants] = useState([]);
-  const getData = useFetch();
+  const fetchPlant = useFetch();
 
   useEffect(() => {
     const getPlants = async () => {
-      const data = await getData.getPlants(
+      const data = await fetchPlant.getPlants(
         'https://gist.githubusercontent.com/bugan/41d60ffa23fa0c4044cc138bf670780d/raw',
       );
       setPlants(data);
