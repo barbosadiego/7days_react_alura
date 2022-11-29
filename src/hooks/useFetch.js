@@ -1,6 +1,6 @@
 export default function useFetch() {
   return {
-    getPlants: async (url) => {
+    get: async (url) => {
       const data = await fetch(url);
       const res = await data.json();
       return res;
