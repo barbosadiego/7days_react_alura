@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Container } from './styles/Container.styled';
 import { Subtitle } from './styles/Titles.styled';
 import { useEffect, useState } from 'react';
 import useFetch from '../hooks/useFetch';
@@ -22,16 +21,14 @@ const Offer = () => {
 
   return (
     <StyledOffer>
-      <Container>
-        <p>Conheça nossas</p>
-        <Subtitle>ofertas</Subtitle>
-        <Grid>
-          {plants &&
-            plants.map((item, index) => {
-              return <Item item={item} key={index}></Item>;
-            })}
-        </Grid>
-      </Container>
+      <p>Conheça nossas</p>
+      <Subtitle>ofertas</Subtitle>
+      <Grid>
+        {plants &&
+          plants.map((item, index) => {
+            return <Item item={item} key={index}></Item>;
+          })}
+      </Grid>
     </StyledOffer>
   );
 };
@@ -40,6 +37,7 @@ export default Offer;
 
 const StyledOffer = styled.section`
   text-align: center;
+  margin-top: 50px;
 
   p {
     color: ${({ theme }) => theme.color.black};
