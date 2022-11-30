@@ -38,6 +38,8 @@ const StyledHero = styled.section`
   }
 
   img {
+    position: relative;
+    left: -100px;
     @media screen and (max-width: 820px) {
       display: none;
     }
