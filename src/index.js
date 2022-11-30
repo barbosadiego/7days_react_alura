@@ -57,7 +57,7 @@ button {
   background-image: url(${pngBackground});
   background-repeat: no-repeat;
   background-position: top right;
-  overflow: hidden;
+  /* overflow: hidden; */
   @media screen and (max-width: 820px) {
     background-image: unset;
   }
