@@ -13,3 +13,9 @@ export function sortByName(data) {
 export function sortByPrice(data) {
   return data.sort((a, b) => a.preco - b.preco);
 }
+
+export function searchByPrice(data, minPrice, maxPrice) {
+  return data.filter(
+    (item) => item.preco >= minPrice && item.preco <= maxPrice,
+  );
+}
