@@ -11,7 +11,6 @@ const Offer = () => {
   const [plants, setPlants] = useState([]);
   const [mobileSearch, setMobileSearch] = useState(false);
   const fetchPlant = useFetch();
-  console.log(mobileSearch);
 
   useEffect(() => {
     fetchPlant.get('http://localhost:3004/plantas').then((res) => {
@@ -107,10 +106,13 @@ const Offer = () => {
           </Selectors>
         </SearchArea>
         <Grid>
-          {plants &&
+          {plants.length ? (
             plants.map((item, index) => {
               return <Item item={item} key={index}></Item>;
-            })}
+            })
+          ) : (
+            <p>sem items</p>
+          )}
         </Grid>
       </ContentArea>
     </StyledOffer>
@@ -126,6 +128,10 @@ const StyledOffer = styled.section`
 
   p {
     color: ${({ theme }) => theme.color.black};
+  }
+
+  input[type='radio'] {
+    accent-color: ${({ theme }) => theme.color.yellow};
   }
 `;
 
@@ -153,9 +159,9 @@ const SearchArea = styled.div`
   gap: 1rem;
   @media (max-width: 820px) {
     position: absolute;
-    background-color: ${({ theme }) => theme.color.yellow};
+    background-color: ${({ theme }) => theme.color.white};
+    box-shadow: 0 0 0 3px ${({ theme }) => theme.color.yellow};
     width: 100%;
-    /* height: 100vh; */
     left: ${({ mobileSearch }) => (mobileSearch ? '0px' : '-150%')};
     top: 0;
     padding: 3rem 1rem;
@@ -172,6 +178,12 @@ const SearchArea = styled.div`
   @media (min-width: 821px) {
     button {
       display: none;
+    }
+  }
+
+  h4 {
+    @media (min-width: 821px) {
+      text-align: left;
     }
   }
 `;
