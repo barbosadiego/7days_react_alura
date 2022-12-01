@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/7days_react_alura/static/js/main.dffb7fd0.js",
+    "main.js": "/7days_react_alura/static/js/main.77582742.js",
     "static/media/imagem-hero.png": "/7days_react_alura/static/media/imagem-hero.7eb174ebd0728c68dc47.png",
     "static/media/conseguir.jpg": "/7days_react_alura/static/media/conseguir.90d86913957873498d2d.jpg",
     "static/media/logo.svg": "/7days_react_alura/static/media/logo.003db44dbb91cc7e9c39dca6fff7927a.svg",
     "index.html": "/7days_react_alura/index.html",
     "static/media/seta.svg": "/7days_react_alura/static/media/seta.8c92d022ecb7bb3752f7833b065bcbcb.svg",
-    "main.dffb7fd0.js.map": "/7days_react_alura/static/js/main.dffb7fd0.js.map"
+    "main.77582742.js.map": "/7days_react_alura/static/js/main.77582742.js.map"
   },
   "entrypoints": [
-    "static/js/main.dffb7fd0.js"
+    "static/js/main.77582742.js"
   ]
 }
