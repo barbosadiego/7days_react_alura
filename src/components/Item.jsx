@@ -6,7 +6,10 @@ const Item = ({ item }) => {
   return (
     <StyledItem>
       <div>
-        <img src={`../products/${item.img}.png`} alt={item.name} />
+        <img
+          src={`https://barbosadiego.github.io/7days_react_alura/products/${item.img}.png`}
+          alt={item.name}
+        />
       </div>
       <Info>
         <h3>{item.name}</h3>
