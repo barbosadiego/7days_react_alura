@@ -16,6 +16,8 @@ const Newsletter = () => {
       );
 
       sendMail(form.current);
+      setEmail('');
+      setNome('');
     }
   };
 
