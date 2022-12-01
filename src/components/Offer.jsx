@@ -13,9 +13,13 @@ const Offer = () => {
   const fetchPlant = useFetch();
 
   useEffect(() => {
-    fetchPlant.get('http://localhost:3004/plantas').then((res) => {
-      setInitialState(res);
-    });
+    fetchPlant
+      .get(
+        'https://gist.githubusercontent.com/bugan/41d60ffa23fa0c4044cc138bf670780d/raw',
+      )
+      .then((res) => {
+        setInitialState(res);
+      });
   }, []);
 
   useEffect(() => {
